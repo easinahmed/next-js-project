@@ -58,13 +58,16 @@ const Hero =() => {
           {/* Right Side - Dot Pattern */}
           <div className="relative h-96 lg:h-full flex items-center justify-center">
             {/* Animated Dot Grid */}
-            <div>
-              <Image 
-                src={home_decor} 
-                alt="Home Decor"
-                width={985}
-                height={751}
-              />
+            <Image 
+              src={home_decor} 
+              alt="Home Decor"
+              width={985}
+              height={751}
+              className="object-contain"
+            />
+
+            <div className='absolute w-140 top-6'>
+              <img className='w-full h-full' src="hero-men.png" alt="" />
             </div>
 
             {/* Decorative circles in corners */}
