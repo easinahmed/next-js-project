@@ -1,6 +1,7 @@
 "use client"
 import { useState } from 'react';
 import { ChevronDown, Menu, X, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Linkedin, MessageCircle } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -11,13 +12,13 @@ export default function Navbar() {
     };
 
     const menuItems = [
-        { label: 'HOME', href: '#' },
-        { label: 'ABOUT US', href: '#', hasDropdown: true },
+        { label: 'HOME', href: '/' },
+        { label: 'ABOUT US', href: 'about', hasDropdown: false },
         { label: 'SERVICES', href: '#', hasDropdown: true },
         { label: 'PROJECTS', href: '#', hasDropdown: true },
         { label: 'BLOG', href: '#', hasDropdown: true },
         { label: 'PAGE', href: '#', hasDropdown: true },
-        { label: 'CONTACT', href: '#', hasDropdown: true },
+        { label: 'CONTACT', href: 'contact', hasDropdown: false },
     ];
 
     return (
@@ -64,23 +65,23 @@ export default function Navbar() {
                 <div className="container px-6 py-4 flex items-center justify-between">
 
                     {/* Logo */}
-                    <div className="flex items-center gap-2 shrink-0">
+                    <Link href={"/"} className="flex items-center gap-2 shrink-0">
                         <div className="w-10 h-10 flex items-center justify-center">
                             <img src="/logo.svg" alt="logo" />
                         </div>
                         <span className="text-2xl font-bold text-gray-900">PixFix</span>
-                    </div>
+                    </Link>
 
                     {/* Desktop Menu */}
                     <div className="hidden lg:flex items-center gap-1">
                         {menuItems.map((item) => (
                             <div key={item.label} className="relative group">
-                                <button
+                                <Link href={item.href}
                                     className="px-4 py-2 text-gray-700 font-semibold text-sm hover:text-orange-500 transition-colors flex items-center gap-1 group-hover:text-orange-500"
                                 >
                                     {item.label}
                                     {item.hasDropdown && <ChevronDown size={16} className="group-hover:rotate-180 transition-transform" />}
-                                </button>
+                                </Link>
 
                                 {/* Dropdown */}
                                 {item.hasDropdown && (

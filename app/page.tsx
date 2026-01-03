@@ -1,9 +1,9 @@
-import About from "@/components/About"
-import Booking from "@/components/Booking"
-import Hero from "@/components/Hero"
-import Pricing from "@/components/Pricing"
-import Services from "@/components/Services"
-import Testimonial from "@/components/Testimonial"
+import About from "@/sections/About"
+import Booking from "@/sections/Booking"
+import Hero from "@/sections/Hero"
+import Pricing from "@/sections/Pricing"
+import Services from "@/sections/Services"
+import Testimonial from "@/sections/Testimonial"
 
 const Home = ()=> {
   return (

@@ -1,4 +1,5 @@
-import { Wrench, AlertCircle, Truck, ChevronRight } from 'lucide-react';
+import { Wrench, AlertCircle, Truck } from 'lucide-react';
+import PriceCard from '../components/PriceCard';
 
 export default function Pricing() {
   const plans = [
@@ -68,50 +69,12 @@ export default function Pricing() {
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => {
-            const Icon = plan.icon;
-            return (
-              <div key={index} className={`rounded-lg overflow-hidden transition-transform hover:scale-105 ${plan.highlight ? 'md:scale-105' : ''}`}>
-                {/* Price Header */}
-                <div className={`${plan.bgColor} ${plan.textColor} py-6 px-6 flex items-center gap-4`}>
-                  <Icon size={40} strokeWidth={1.5} />
-                  <div>
-                    <span className="text-3xl font-bold">{plan.price}</span>
-                    <span className="text-sm">/mo</span>
-                  </div>
-                </div>
-
-                {/* Card Content */}
-                <div className="bg-white px-6 py-8">
-                  {/* Plan Name */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">
-                    {plan.name}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-gray-600 text-sm text-center mb-6 leading-relaxed">
-                    Repair is a specialized field that focuses fixing and restoring objects or systems
-                  </p>
-
-                  {/* Features */}
-                  <div className="space-y-4 mb-8">
-                    {plan.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <ChevronRight className="text-orange-500 shrink-0 mt-0.5" size={20} />
-                        <span className="text-gray-700 text-sm">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Button */}
-                  <button className={`w-full py-3 font-bold transition-colors ${plan.buttonStyle}`}>
-                    GET NOW <span className="ml-2">→</span>
-                  </button>
-                </div>
-              </div>
-            );
+            return <PriceCard key={index} plan={plan} />;
           })}
         </div>
       </div>
     </section>
   );
 }
+
+
