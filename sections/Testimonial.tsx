@@ -113,7 +113,7 @@ export default function Testimonial() {
             </div>
 
             {/* Pagination Dots */}
-            <div className="flex items-center gap-3">
+            <div className="flex mb-4 items-center gap-3">
               {testimonials.map((_, index) => (
                 <button
                   key={index}

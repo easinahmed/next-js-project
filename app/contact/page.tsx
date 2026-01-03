@@ -28,7 +28,7 @@ export default function ContactSection() {
   return (
     <section className="bg-white ">
         <CommonBanner heading='Contact' pageName='Contact'/>
-      <div className="container py-20">
+      <div className="container px-10 py-20">
         {/* Header */}
           <div className='max-w-143'>
               <p className="text-orange-500 text-sm font-semibold mb-4">Get Quote</p>

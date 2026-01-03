@@ -28,4 +28,5 @@ body {
 .container{
   max-width: 1290px;
   margin-inline: auto;
+  padding-inline: 24px;
 }
