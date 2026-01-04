@@ -8,26 +8,32 @@ const page = () => {
 
     const projects = [
         {
+            id: 1,
             title: "Rail Frieght",
             image: image_1
         },
         {
+            id: 2,
             title: "Duct Work Inspection",
             image: image_2
         },
         {
+            id: 3,
             title: "Inspection Search",
             image: image_3
         },
         {
+            id: 4,
             title: "Road Frieght",
             image: image_2
         },
         {
+            id: 5,
             title: "Work Search",
             image: image_3
         },
         {
+            id: 6,
             title: "Rail Frieght",
             image: image_1
         },

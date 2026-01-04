@@ -7,13 +7,13 @@ export default function About() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                     {/* Left Side - Images */}
-                    <div className=" h-screen lg:h-auto grid grid-cols-[auto_326px] gap-6 items-center justify-center">
+                    <div className=" h-screen lg:h-auto grid md:grid-cols-[auto_326px] gap-6 items-center justify-center">
                         
                         <div className='flex flex-col gap-6 justify-end items-end w-full h-full'>
-                            <div className='self-end'>
+                            <div className='md:self-end'>
                                 <img src="about-1.png" alt="about image" />
                             </div>
-                            <div className='self-end'>
+                            <div className='md:self-end'>
                                 <img src="about-2.png" alt="about image" />
                             </div>
                         </div>
