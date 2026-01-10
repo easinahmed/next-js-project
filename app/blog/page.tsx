@@ -2,6 +2,8 @@
 import CommonBanner from "@/components/CommonBanner"
 import { useState } from 'react';
 import { Calendar, MessageCircle, Search, ChevronRight, ChevronLeft } from 'lucide-react';
+import blog_image from "@/public/blog.png"
+import Image from "next/image";
 
 
 const page = () => {
@@ -11,7 +13,7 @@ const page = () => {
   const allBlogPosts = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1486262715619-3417ca375640?w=600&h=400&fit=crop",
+      image: blog_image,
       category: "Pixfx",
       date: "March 14, 2024",
       comments: "No Comments",
@@ -20,7 +22,7 @@ const page = () => {
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1621905167918-48416bd8575a?w=600&h=400&fit=crop",
+      image: blog_image,
       category: "Pixfx",
       date: "March 14, 2024",
       comments: "No Comments",
@@ -29,7 +31,7 @@ const page = () => {
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=400&fit=crop",
+      image: blog_image,
       category: "Pixfx",
       date: "March 14, 2024",
       comments: "No Comments",
@@ -38,7 +40,7 @@ const page = () => {
     },
     {
       id: 4,
-      image: "https://images.unsplash.com/photo-1486262715619-3417ca375640?w=600&h=400&fit=crop",
+      image: blog_image,
       category: "Pixfx",
       date: "March 15, 2024",
       comments: "No Comments",
@@ -47,7 +49,7 @@ const page = () => {
     },
     {
       id: 5,
-      image: "https://images.unsplash.com/photo-1621905167918-48416bd8575a?w=600&h=400&fit=crop",
+      image: blog_image,
       category: "Pixfx",
       date: "March 15, 2024",
       comments: "No Comments",
@@ -56,7 +58,7 @@ const page = () => {
     },
     {
       id: 6,
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=400&fit=crop",
+      image: blog_image,
       category: "Pixfx",
       date: "March 15, 2024",
       comments: "No Comments",
@@ -87,17 +89,17 @@ const page = () => {
 
   const recentPosts = [
     {
-      image: "https://images.unsplash.com/photo-1486262715619-3417ca375640?w=150&h=120&fit=crop",
+      image: blog_image,
       title: "REPAIR WORN YOUR VEHICLE LOOKS",
       date: "March 14, 2024"
     },
     {
-      image: "https://images.unsplash.com/photo-1621905167918-48416bd8575a?w=150&h=120&fit=crop",
+      image: blog_image,
       title: "EXPERT ELECTRICIAN WORKS IN SWITCHBOARD",
       date: "March 14, 2024"
     },
     {
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=150&h=120&fit=crop",
+      image: blog_image,
       title: "BUSINESSES ARE THRIVING, SOCIETIES ARE",
       date: "March 14, 2024"
     }
@@ -127,10 +129,10 @@ const page = () => {
           <div className="lg:col-span-2">
             {/* Blog Posts */}
             <div className="space-y-12">
-              {blogPosts.map((post) => (
+              {blogPosts.map((post:any) => (
                 <div key={post.id}>
                   {/* Featured Image */}
-                  <img
+                  <Image
                     src={post.image}
                     alt={post.title}
                     className="w-full h-80 object-cover rounded-lg mb-6 shadow-lg"
@@ -238,7 +240,7 @@ const page = () => {
               <div className="space-y-4">
                 {recentPosts.map((post, index) => (
                   <div key={index} className="flex gap-4 cursor-pointer group">
-                    <img
+                    <Image
                       src={post.image}
                       alt={post.title}
                       className="w-20 h-20 object-cover rounded-lg group-hover:shadow-lg transition-shadow"

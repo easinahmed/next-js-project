@@ -14,10 +14,35 @@ export default function Navbar() {
     const menuItems = [
         { label: 'HOME', href: '/' },
         { label: 'ABOUT US', href: 'about', hasDropdown: false },
-        { label: 'SERVICES', href: '#', hasDropdown: true },
-        { label: 'PROJECTS', href: '#', hasDropdown: true },
-        { label: 'BLOG', href: '#', hasDropdown: true },
-        { label: 'PAGE', href: '#', hasDropdown: true },
+        {
+            label: 'SERVICES', href: '#', hasDropdown: true,
+            subMenu: [
+                { label: 'SERVICES', href: "/services" },
+                { label: 'SERVICES DETAILS', href: "/services/1" },
+
+            ]
+        },
+        {
+            label: 'PROJECTS', href: '#', hasDropdown: true,
+            subMenu: [
+                { label: 'PROJECTS', href: "/project" },
+                { label: 'PROJECTS DETAILS', href: "/project/1" },
+            ]
+        },
+        {
+            label: 'BLOG', href: '#', hasDropdown: true,
+            subMenu: [
+                { label: 'BLOG', href: "/blog" },
+                { label: 'BLOG DETAILS', href: "/blog/1" },
+            ]
+        },
+        {
+            label: 'PAGE', href: '#', hasDropdown: true,
+            subMenu: [
+                { label: 'PRICING', href: "/pricing" },
+                { label: 'ERROR', href: "/error" },
+            ]
+        },
         { label: 'CONTACT', href: 'contact', hasDropdown: false },
     ];
 
@@ -85,16 +110,29 @@ export default function Navbar() {
 
                                 {/* Dropdown */}
                                 {item.hasDropdown && (
-                                    <div className="absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
-                                        <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-500 text-sm">
-                                            Option 1
-                                        </a>
-                                        <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-500 text-sm">
-                                            Option 2
-                                        </a>
-                                        <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-500 text-sm">
-                                            Option 3
-                                        </a>
+                                    <div
+                                        className="
+                                            absolute left-0 top-full
+                                            w-48 bg-white rounded-md shadow-lg
+                                            opacity-0 invisible
+                                            group-hover:opacity-100 group-hover:visible
+                                            transition-all duration-200
+                                            py-2 z-50
+                                            "
+                                    >
+                                        {item.subMenu?.map((subItem, index) => (
+                                            <Link
+                                                key={index}
+                                                href={subItem.href}
+                                                className="
+                                                    block px-4 py-2 text-gray-700 text-sm
+                                                    hover:bg-orange-50 hover:text-orange-500
+                                                    transition-colors
+                                                    "
+                                            >
+                                                {subItem.label}
+                                            </Link>
+                                        ))}
                                     </div>
                                 )}
                             </div>
