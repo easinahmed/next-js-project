@@ -33,7 +33,7 @@ export default function Booking() {
         }
     ];
 
-    const handleChange = (e) => {
+    const handleChange = (e:any) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -41,7 +41,7 @@ export default function Booking() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e:any) => {
         e.preventDefault();
         console.log('Form submitted:', formData);
         setFormData({ name: '', email: '', phone: '', comment: '' });
