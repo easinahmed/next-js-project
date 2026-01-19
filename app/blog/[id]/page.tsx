@@ -2,10 +2,11 @@
 
 import CommonBanner from "@/components/CommonBanner"
 import { useState } from 'react';
-import { User, Tag, MessageCircle, Share2, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import {  Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import { ChevronLeft, ChevronRight, Search } from 'lucide-react';
+import Image from "next/image";
 
-const page = ({params}:any) => {
+const page =  ({params}:any) => {
     const {id} = params
  const [formData, setFormData] = useState({
     name: '',
@@ -36,13 +37,13 @@ const page = ({params}:any) => {
 
   const recentPosts = [
     {
-      image: "https://images.unsplash.com/photo-1486262715619-3417ca375640?w=150&h=120&fit=crop",
+      image: "https://images.pexels.com/photos/474/black-and-white-car-vehicle-vintage.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       title: "A PICTURE IS WORTH STANDARD AND STAND US RETURN",
       author: "admin",
       category: "Category"
     },
     {
-      image: "https://images.unsplash.com/photo-1621905167918-48416bd8575a?w=150&h=120&fit=crop",
+      image: "https://images.pexels.com/photos/474/black-and-white-car-vehicle-vintage.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       title: "A PICTURE IS WORTH STANDARD AND STAND US RETURN",
       author: "admin",
       category: "Category"
@@ -79,10 +80,12 @@ const page = ({params}:any) => {
           {/* Main Content */}
           <div className="lg:col-span-2">
             {/* Featured Image */}
-            <img
-              src="https://images.unsplash.com/photo-1486262715619-3417ca375640?w=900&h=500&fit=crop"
+            <Image
+              src="https://images.pexels.com/photos/474/black-and-white-car-vehicle-vintage.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               alt="Blog post featured"
               className="w-full h-96 object-cover rounded-lg mb-6 shadow-lg"
+              height={384}
+              width={600}
             />
 
             {/* Post Meta */}
