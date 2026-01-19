@@ -33,7 +33,7 @@ export default function Booking() {
         }
     ];
 
-    const handleChange = (e:any) => {
+    const handleChange = (e:React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -41,7 +41,7 @@ export default function Booking() {
         }));
     };
 
-    const handleSubmit = (e:any) => {
+    const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         console.log('Form submitted:', formData);
         setFormData({ name: '', email: '', phone: '', comment: '' });
